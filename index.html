@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Lorts | Graphic Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ========= HEADER ========= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <!-- Cream layer with angled cut -->
+      <div class="header-cream" aria-hidden="true"></div>
+
+      <!-- Logo (links to homepage) -->
+      <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
+        <span class="logo-mark" aria-hidden="true">
+          <!-- Stylized CL monogram -->
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="48" font-family="'Cormorant Garamond', serif"
+                  font-size="54" font-weight="700" fill="#1a1a1a">C</text>
+            <text x="28" y="48" font-family="'Cormorant Garamond', serif"
+                  font-size="54" font-weight="700" fill="#8B1A1A">L</text>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-name">CLAIRE LORTS</span>
+          <span class="logo-tag">GRAPHIC DESIGN</span>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown nav -->
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a href="about.html">About</a>
+      <a href="https://example.com" target="_blank" rel="noopener noreferrer">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ========= MAIN GRID ========= -->
+  <main class="page">
+    <div class="grid-wrapper">
+
+      <!-- Row 1: 50/50 — Rocks + JOKER -->
+      <div class="grid-row row-equal">
+        <a href="project.html" class="cell" aria-label="Project: Never Stop Searching For Your Light"></a>
+        <a href="project.html" class="cell" aria-label="Project: Joker"></a>
+      </div>
+
+      <!-- Row 2: 1:2 — T-shirt + Wine bottles -->
+      <div class="grid-row row-1-2">
+        <a href="project.html" class="cell" aria-label="Project: T-shirt design"></a>
+        <a href="project.html" class="cell" aria-label="Project: Winery branding"></a>
+      </div>
+
+      <!-- Row 3: 3:2 — Black cake + Collage -->
+      <div class="grid-row row-3-2">
+        <a href="project.html" class="cell" aria-label="Project: Cake illustration"></a>
+        <a href="project.html" class="cell" aria-label="Project: Art collage"></a>
+      </div>
+
+      <!-- Row 4: 50/50 — Life cycle + Butterflies -->
+      <div class="grid-row row-equal">
+        <a href="project.html" class="cell" aria-label="Project: Annual life cycle"></a>
+        <a href="project.html" class="cell" aria-label="Project: Butterfly typography"></a>
+      </div>
+
+      <!-- Row 5: 2:1 — Moldova + Whiskey -->
+      <div class="grid-row row-2-1">
+        <a href="project.html" class="cell" aria-label="Project: Moldova"></a>
+        <a href="project.html" class="cell" aria-label="Project: Whiskey label"></a>
+      </div>
+
+      <!-- Row 6: 1:2 — Mixing Bowl + Leaves -->
+      <div class="grid-row row-1-2">
+        <a href="project.html" class="cell" aria-label="Project: The Mixing Bowl"></a>
+        <a href="project.html" class="cell" aria-label="Project: Botanical illustrations"></a>
+      </div>
+
+      <!-- Row 7: 50/50 — Aurora + Newspaper -->
+      <div class="grid-row row-equal">
+        <a href="project.html" class="cell" aria-label="Project: Aurora"></a>
+        <a href="project.html" class="cell" aria-label="Project: Newspaper article"></a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========= FOOTER ========= -->
+  <footer class="site-footer">
+    <p>© 2026 Claire Lorts</p>
+    <p>Designed and Built by Claire Lorts</p>
+    <p>Contact: My Linktree</p>
+    <p>Boalsburg, PA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

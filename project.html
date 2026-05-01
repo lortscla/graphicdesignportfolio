@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winery Branding, Labels, Coasters &amp; Web Design | Claire Lorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ========= HEADER ========= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-cream" aria-hidden="true"></div>
+
+      <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <text x="6" y="48" font-family="'Cormorant Garamond', serif"
+                  font-size="54" font-weight="700" fill="#1a1a1a">C</text>
+            <text x="28" y="48" font-family="'Cormorant Garamond', serif"
+                  font-size="54" font-weight="700" fill="#8B1A1A">L</text>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-name">CLAIRE LORTS</span>
+          <span class="logo-tag">GRAPHIC DESIGN</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a href="about.html">About</a>
+      <a href="https://example.com" target="_blank" rel="noopener noreferrer">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ========= PROJECT CONTENT ========= -->
+  <main class="page page-child">
+    <div class="child-wrapper child-wrapper-project">
+      <h1 class="child-title">Winery Branding, Labels, Coasters &amp; Web Design</h1>
+      <p class="child-subtitle">Client: Sourdoré Wine</p>
+      <p class="child-body">Branding including logo design, conception of winery brand personality and story, wine labels and coaster
+        set for limited wine series, and website design.</p>
+
+      <!-- Project grid -->
+      <div class="project-grid">
+        <!-- Row 1: bottles (2-col span) + computer (1-col span with button) -->
+        <div class="project-cell project-cell-large" aria-label="Wine bottles photo placeholder"></div>
+
+        <div class="project-cell-stack">
+          <div class="project-cell" aria-label="Computer mockup placeholder"></div>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red btn-red-cell">View The Website</a>
+        </div>
+
+        <!-- Row 2: three equal cells -->
+        <div class="project-cell" aria-label="Wine bottle with coasters placeholder"></div>
+        <div class="project-cell" aria-label="Phone Instagram placeholder"></div>
+        <div class="project-cell" aria-label="Tablet placeholder"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========= FOOTER ========= -->
+  <footer class="site-footer">
+    <p>© 2026 Claire Lorts</p>
+    <p>Designed and Built by Claire Lorts</p>
+    <p>Contact: My Linktree</p>
+    <p>Boalsburg, PA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

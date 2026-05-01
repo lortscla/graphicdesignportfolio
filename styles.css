@@ -1,0 +1,714 @@
+/* =========================================================
+   CLAIRE LORTS — PORTFOLIO STYLES
+   ========================================================= */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors — replicated from the visual design */
+  --page-bg: #2D2A28;        /* dark page outer background */
+  --header-cream: #F1ECE0;   /* warm cream on header */
+  --dark-band: #3A3635;      /* dark angled band + footer */
+  --content-bg: #FFFFFF;     /* main content card bg */
+  --red: #8B1A1A;            /* logo accent + buttons */
+  --red-hover: #701414;
+  --text-dark: #2C2C2C;
+  --text-muted: #5b5b5b;
+  --frame-border: #000000;   /* 1px frame around image cells */
+
+  /* Spacing */
+  --gutter-desktop: 40px;
+  --gutter-mobile: 20px;
+  --gutter: var(--gutter-desktop);
+
+  /* Header heights — change drives the shrink animation */
+  --header-h-large: 150px;
+  --header-h-small: 92px;
+
+  /* Type */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Lato', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--page-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--dark-band);  /* dark shows through below the cream wedge */
+  height: var(--header-h-large);
+  transition: height 0.35s ease;
+}
+
+/* Once page is scrolled, header shrinks */
+.site-header.shrunk {
+  height: var(--header-h-small);
+}
+
+.header-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Cream layer with the diagonal cut.
+   Polygon: top-left, top-right, drops along right side, then
+   slopes down-left to bottom-left — leaving a triangle of dark
+   exposed in the bottom-right corner. */
+.header-cream {
+  position: absolute;
+  inset: 0;
+  background: var(--header-cream);
+  clip-path: polygon(0 0, 100% 0, 100% 38%, 0 100%);
+}
+
+/* Logo — center of header, vertically centered, sits across the diagonal */
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  animation: logo-bounce 0.6s ease;
+}
+
+@keyframes logo-bounce {
+  0%   { transform: translate(-50%, -50%) translateY(0); }
+  30%  { transform: translate(-50%, -50%) translateY(-10px); }
+  50%  { transform: translate(-50%, -50%) translateY(0); }
+  70%  { transform: translate(-50%, -50%) translateY(-5px); }
+  100% { transform: translate(-50%, -50%) translateY(0); }
+}
+
+.logo-mark {
+  width: 64px;
+  height: 64px;
+  display: block;
+  flex-shrink: 0;
+  transition: width 0.35s ease, height 0.35s ease;
+}
+
+.logo-mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.site-header.shrunk .logo-mark {
+  width: 46px;
+  height: 46px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 38px;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+  white-space: nowrap;
+  transition: font-size 0.35s ease;
+}
+
+.site-header.shrunk .logo-name {
+  font-size: 28px;
+}
+
+.logo-tag {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.32em;
+  color: var(--red);
+  border-top: 1px solid var(--red);
+  border-bottom: 1px solid var(--red);
+  padding: 3px 8px;
+  margin-top: 6px;
+  white-space: nowrap;
+  transition: font-size 0.35s ease, padding 0.35s ease;
+}
+
+.site-header.shrunk .logo-tag {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+/* Desktop nav — sits in the dark wedge bottom-right */
+.nav-desktop {
+  position: absolute;
+  right: 40px;
+  bottom: 18px;
+  display: flex;
+  gap: 28px;
+  z-index: 3;
+}
+
+.nav-desktop a {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.nav-desktop a:hover {
+  opacity: 0.75;
+}
+
+.nav-desktop a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #ffffff;
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger {
+  display: none;
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  width: 36px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 5;
+  padding: 0;
+}
+
+.hamburger .bar {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  height: 2.5px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease, top 0.35s ease;
+}
+
+.hamburger .bar-1 { top: 6px; }
+.hamburger .bar-2 { top: 14px; }
+.hamburger .bar-3 { top: 22px; }
+
+/* X state */
+.hamburger.is-open .bar-1 {
+  top: 14px;
+  transform: rotate(45deg);
+}
+.hamburger.is-open .bar-2 {
+  opacity: 0;
+}
+.hamburger.is-open .bar-3 {
+  top: 14px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile dropdown nav — hidden by default */
+.nav-mobile {
+  display: none;
+  background: var(--dark-band);
+  flex-direction: column;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.nav-mobile a {
+  display: block;
+  padding: 22px 24px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-mobile a:last-child {
+  border-bottom: 0;
+}
+
+.nav-mobile a:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-mobile.is-open {
+  display: flex;
+}
+
+/* =========================================================
+   MAIN PAGE LAYOUT
+   ========================================================= */
+
+.page {
+  background: var(--content-bg);
+  margin: var(--gutter) var(--gutter) 0;
+  padding: var(--gutter);
+  min-height: 50vh;
+}
+
+/* =========================================================
+   HOMEPAGE GRID
+   ========================================================= */
+
+.grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter);
+}
+
+.grid-row {
+  display: grid;
+  gap: var(--gutter);
+}
+
+/* Column ratios per row */
+.row-equal { grid-template-columns: 1fr 1fr; }
+.row-1-2   { grid-template-columns: 1fr 2fr; }
+.row-2-1   { grid-template-columns: 2fr 1fr; }
+.row-3-2   { grid-template-columns: 3fr 2fr; }
+.row-2-3   { grid-template-columns: 2fr 3fr; }
+
+/* Image cell — placeholder gray box with a 1px black frame.
+   Uses min-height (not aspect-ratio) so cells in the same grid row
+   stretch to share a consistent row height regardless of column width. */
+.cell {
+  display: block;
+  background: #d6d6d6;
+  border: 1px solid var(--frame-border);
+  min-height: 280px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle "image placeholder" texture so the boxes don't read as broken */
+.cell::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.025) 0,
+      rgba(0, 0, 0, 0.025) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  pointer-events: none;
+}
+
+/* Desktop hover rise */
+@media (hover: hover) and (pointer: fine) {
+  .cell:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 22px rgba(0, 0, 0, 0.18);
+  }
+}
+
+/* =========================================================
+   CHILD PAGES — common
+   ========================================================= */
+
+.child-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+}
+
+.child-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.child-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.child-body {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  font-size: 15px;
+  color: var(--text-dark);
+}
+
+/* Red button (used on About + Project pages) */
+.btn-red {
+  display: inline-block;
+  background: var(--red);
+  color: #ffffff;
+  padding: 12px 28px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  border: 0;
+}
+
+.btn-red:hover {
+  background: var(--red-hover);
+  transform: translateY(-2px);
+}
+
+.cta-row {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 30px;
+  max-width: 760px;
+  margin: 0 auto;
+  align-items: start;  /* keep text at top when row-spanning */
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #d6d6d6;
+  position: relative;
+}
+
+.about-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.04) 0,
+      rgba(0, 0, 0, 0.04) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+}
+
+.about-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.about-text a {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   PROJECT PAGE GRID
+   ========================================================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+  margin-top: 20px;
+}
+
+.project-cell {
+  background: #d6d6d6;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-cell::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.025) 0,
+      rgba(0, 0, 0, 0.025) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  pointer-events: none;
+}
+
+/* The bottles cell — wider (spans 2 cols) and matches stack height */
+.project-cell-large {
+  grid-column: span 2;
+  aspect-ratio: auto;       /* override */
+  min-height: 100%;         /* fill row height set by stack */
+}
+
+/* The right-side stack: image + button */
+.project-cell-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-cell-stack .project-cell {
+  flex: 1 1 auto;
+  aspect-ratio: auto;
+  min-height: 360px;
+}
+
+.btn-red-cell {
+  text-align: center;
+  align-self: stretch;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  background: var(--dark-band);
+  color: #d8d4cf;
+  text-align: center;
+  padding: 26px 20px 30px;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0 var(--gutter) var(--gutter);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    --header-h-large: 130px;
+    --header-h-small: 80px;
+  }
+
+  .logo-name { font-size: 30px; }
+  .site-header.shrunk .logo-name { font-size: 24px; }
+  .logo-tag { font-size: 12px; }
+  .nav-desktop { right: 28px; }
+  .nav-desktop a { font-size: 18px; }
+
+  /* Tablet project grid: 2 columns. Bottles spans both, stack and
+     small cells flow naturally below. */
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-cell-large {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+
+  .project-cell-stack {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+
+  .project-cell-stack .project-cell {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: var(--gutter-mobile);
+    --header-h-large: 110px;
+    --header-h-small: 78px;
+  }
+
+  /* Show hamburger, hide desktop nav */
+  .nav-desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Logo shrinks for mobile */
+  .logo {
+    gap: 8px;
+  }
+
+  .logo-mark {
+    width: 44px;
+    height: 44px;
+  }
+
+  .site-header.shrunk .logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-name {
+    font-size: 22px;
+  }
+
+  .site-header.shrunk .logo-name {
+    font-size: 18px;
+  }
+
+  .logo-tag {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    padding: 2px 6px;
+  }
+
+  .site-header.shrunk .logo-tag {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+
+  /* Adjust the cream wedge for the smaller header — give logo more cream space */
+  .header-cream {
+    clip-path: polygon(0 0, 100% 0, 100% 55%, 0 100%);
+  }
+
+  /* All grid rows stack on mobile */
+  .grid-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cells maintain a friendly min-height when stacked */
+  .cell {
+    min-height: 220px;
+  }
+
+  /* Project page — stack everything */
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-cell-large,
+  .project-cell-stack {
+    grid-column: span 1;
+  }
+
+  .project-cell-stack {
+    flex-direction: column;
+  }
+
+  .project-cell-stack .project-cell {
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+
+  .btn-red-cell {
+    min-height: 0;
+    padding: 14px 24px;
+  }
+
+  /* About page — stack photo above text, text stays at top */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 480px;
+  }
+
+  .about-photo {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .child-title {
+    font-size: 24px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .logo-name { font-size: 18px; }
+  .site-header.shrunk .logo-name { font-size: 15px; }
+  .logo-tag { font-size: 8px; letter-spacing: 0.2em; }
+  .logo-mark { width: 36px; height: 36px; }
+  .site-header.shrunk .logo-mark { width: 30px; height: 30px; }
+}
+
+/* Disable hover-rise on touch devices */
+@media (hover: none) {
+  .cell:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
