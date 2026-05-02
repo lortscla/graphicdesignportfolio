@@ -306,7 +306,6 @@ img {
   display: block;
   background: #d6d6d6;
   border: 1px solid var(--frame-border);
-  min-height: 280px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -568,7 +567,8 @@ img {
   }
 
   /* Per-cell max-widths derived from each row's desktop ratio */
-  .row-1 .cell                    { max-width: 696px; }
+ .row-1 .cell:nth-child(1)       { max-width: 696px; }
+.row-1 .cell:nth-child(2)       { max-width: 350px; }
 
   .row-2 .cell:nth-child(1)       { max-width: 464px; }
   .row-2 .cell:nth-child(2)       { max-width: 928px; }
@@ -582,9 +582,9 @@ img {
   .row-5 .cell:nth-child(2)       { max-width: 464px; }
 
   .row-7 .cell                    { max-width: 696px; }
-.row-6 .cell:nth-child(1),
-  .row-6 .cell:nth-child(2),
-  .row-6 .cell:nth-child(3) { max-width: 437px; 
+.row-6 .cell:nth-child(1)       { max-width: 600px; }
+  .row-6 .cell:nth-child(2)       { max-width: 600px; }
+  .row-6 .cell:nth-child(3) { max-width: 600px; }
     
 }
 
