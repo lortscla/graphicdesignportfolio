@@ -20,17 +20,19 @@
     .project-grid-artprograms {
       display: grid;
       gap: var(--gutter);
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-areas:
-        "notebook  busstop  folder-open"
-        "button    busstop  folder-open"
-        "phone     busstop  folder-held";
+        "folder-front  folder-back  poster poster"
+        "folder-open folder-open poster poster"
+        "notebook  notebook  notebook phone"
+        "button       button       button   .";
     }
-    .project-grid-artprograms .area-notebook { grid-area: notebook; aspect-ratio: 4 / 3; }
-    .project-grid-artprograms .area-phone { grid-area: phone; aspect-ratio: 4 / 3; }
-    .project-grid-artprograms .area-busstop { grid-area: busstop; aspect-ratio: 9 / 16; }
-    .project-grid-artprograms .area-folder-open { grid-area: folder-open; aspect-ratio: 4 / 3; }
-    .project-grid-artprograms .area-folder-held { grid-area: folder-held; aspect-ratio: 4 / 3; }
+    .project-grid-artprograms .area-notebook { grid-area: notebook; aspect-ratio: 4 / 2.4; }
+    .project-grid-artprograms .area-phone { grid-area: phone; aspect-ratio: 2 / 4; }
+    .project-grid-artprograms .area-poster { grid-area: poster; aspect-ratio: 9 / 11.5; }
+    .project-grid-artprograms .area-folder-open { grid-area: folder-open; aspect-ratio: 4 / 2.2; }
+    .project-grid-artprograms .area-folder-front { grid-area: folder-front; aspect-ratio: 4 / 5.3; }
+     .project-grid-artprograms .area-folder-back { grid-area: folder-back; aspect-ratio: 4 / 5.3; }
     .project-grid-artprograms .area-button { grid-area: button; justify-self: center; align-self: center; }
     @media (max-width: 1511px) {
       .project-grid-artprograms {
@@ -41,9 +43,10 @@
       .project-grid-artprograms > * { width: 100%; }
       .project-grid-artprograms .area-notebook { max-width: 440px; }
       .project-grid-artprograms .area-phone { max-width: 440px; }
-      .project-grid-artprograms .area-busstop { max-width: 440px; }
+      .project-grid-artprograms .area-poster { max-width: 440px; }
       .project-grid-artprograms .area-folder-open { max-width: 660px; }
-      .project-grid-artprograms .area-folder-held { max-width: 440px; }
+      .project-grid-artprograms .area-folder-front { max-width: 440px; }
+      .project-grid-artprograms .area-folder-back { max-width: 440px; }
     }
   </style>
 </head>
@@ -77,12 +80,25 @@
       <p class="child-body">Informational folder and poster promoting Harrisburg Area Community College's Art Programs.</p>
 
       <div class="project-grid project-grid-artprograms">
-        <div class="project-cell area-notebook" aria-label="Open notebook with red strap and pen placeholder"></div>
-        <div class="project-cell area-busstop" aria-label="Bus stop poster — Follow Your Creative Path at HACC placeholder"></div>
-        <div class="project-cell area-folder-open" aria-label="Open informational folder showing inside spread placeholder"></div>
-        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Flipbook</a>
-        <div class="project-cell area-phone" aria-label="Phone showing Harrisburg Area Community College Instagram placeholder"></div>
-        <div class="project-cell area-folder-held" aria-label="Informational folder being held open placeholder"></div>
+        <div class="project-cell area-notebook" aria-label="Open notebook with red strap and pen placeholder">
+          <img src="images/hacc-art-notebook.webp" alt="Notebook mockup">
+        </div>
+        <div class="project-cell area-poster" aria-label="Bus stop poster — Follow Your Creative Path at HACC placeholder">
+          <img src="images/hacc-poster.webp" alt="Poster mockup">
+        </div>
+        <div class="project-cell area-folder-open" aria-label="Open informational folder showing inside spread placeholder">
+          <img src="images/hacc-art-spread.webp" alt="Open folder mockup">
+        </div>
+        <a href="https://online.fliphtml5.com/tefcf/haccnotebook-for-flipbook/#p=1" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Flipbook</a>
+        <div class="project-cell area-phone" aria-label="Phone showing Harrisburg Area Community College Instagram placeholder">
+          <img src="images/hacc-art-smad.webp" alt="Phone mockup showing HACC Instagram">
+        </div>
+        <div class="project-cell area-folder-front" aria-label="Informational folder being held open placeholder">
+          <img src="images/hacc-art-folder-back.webp" alt="Folder held mockup">
+        </div>
+        <div class="project-cell area-folder-back" aria-label="Informational folder being held open placeholder">
+          <img src="images/hacc-art-folder-back.webp" alt="Folder held mockup">
+        </div>
       </div>
     </div>
   </main>

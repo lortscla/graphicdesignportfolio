@@ -17,21 +17,24 @@
 <link rel="manifest" href="favicon/site.webmanifest" />
 
   <style>
+
+
     .project-grid-winery {
-      display: grid;
-      gap: var(--gutter);
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      grid-template-areas:
-        "bottles bottles computer computer"
-        "bottles bottles button   button"
-        "smallbottle phone tablet tablet";
-    }
-    .project-grid-winery .area-bottles { grid-area: bottles; aspect-ratio: 4 / 3; }
-    .project-grid-winery .area-computer { grid-area: computer; aspect-ratio: 16 / 9; }
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: repeat(6, 1fr);   /* 6-column base */
+  grid-template-areas:
+    "bottles bottles bottles computer computer computer"
+    "bottles bottles bottles button   button   button"
+    "smallbottle smallbottle phone phone tablet tablet";
+}
+
+    .project-grid-winery .area-bottles { grid-area: bottles; aspect-ratio: 4 / 4.65; }
+    .project-grid-winery .area-computer { grid-area: computer; aspect-ratio: 3 / 3.5; }
     .project-grid-winery .area-button { grid-area: button; justify-self: center; align-self: center; }
-    .project-grid-winery .area-smallbottle { grid-area: smallbottle; aspect-ratio: 1 / 1; }
-    .project-grid-winery .area-phone { grid-area: phone; aspect-ratio: 1 / 1; }
-    .project-grid-winery .area-tablet { grid-area: tablet; aspect-ratio: 2 / 1; }
+    .project-grid-winery .area-smallbottle { grid-area: smallbottle; aspect-ratio: 1 / 1.2; }
+    .project-grid-winery .area-phone { grid-area: phone; aspect-ratio: .83 / 1; }
+    .project-grid-winery .area-tablet { grid-area: tablet; aspect-ratio: .83 / 1; }
     @media (max-width: 1511px) {
       .project-grid-winery {
         grid-template-columns: 1fr;
@@ -43,7 +46,7 @@
       .project-grid-winery .area-computer { max-width: 660px; }
       .project-grid-winery .area-smallbottle { max-width: 440px; }
       .project-grid-winery .area-phone { max-width: 440px; }
-      .project-grid-winery .area-tablet { max-width: 660px; }
+      .project-grid-winery .area-tablet { max-width: 660px;  }
     }
   </style>
 </head>
@@ -77,12 +80,22 @@
       <p class="child-body">Branding including logo design, conception of winery brand personality and story, wine labels and coaster set for limited wine series, and website design.</p>
 
       <div class="project-grid project-grid-winery">
-        <div class="project-cell area-bottles" aria-label="Four wine bottles with branding placeholder"></div>
-        <div class="project-cell area-computer" aria-label="Computer and phone showing Common Ground winery website placeholder"></div>
-        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Website</a>
-        <div class="project-cell area-smallbottle" aria-label="Wine bottle with coasters placeholder"></div>
-        <div class="project-cell area-phone" aria-label="Phone showing Synergy wine Instagram placeholder"></div>
-        <div class="project-cell area-tablet" aria-label="Tablet showing 'Lessons From The Second Season' wine pages placeholder"></div>
+        <div class="project-cell area-bottles" aria-label="Four wine bottles with branding placeholder">
+          <img src="images/winery-bottles.webp" alt="Wine bottles cropped">
+        </div>
+        <div class="project-cell area-computer" aria-label="Computer and phone showing Common Ground winery website placeholder">
+          <img src="images/winery-website.webp" alt="Winery website mockup">
+        </div>
+        <a href="https://lortscla.github.io/commonground/" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Website</a>
+        <div class="project-cell area-smallbottle" aria-label="Wine bottle with coasters placeholder">
+          <img src="images/winery-coasters.webp" alt="Wine coasters">
+        </div>
+        <div class="project-cell area-phone" aria-label="Phone showing Synergy wine Instagram placeholder">
+          <img src="images/winery-smad.webp" alt="Winery Instagram mockup">
+        </div>
+        <div class="project-cell area-tablet" aria-label="Tablet showing 'Lessons From The Second Season' wine pages placeholder">
+          <img src="images/winery-tablet.webp" alt="Winery tablet mockup">
+        </div>
       </div>
     </div>
   </main>
