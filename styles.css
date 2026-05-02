@@ -29,7 +29,7 @@
   --gutter: var(--gutter-desktop);
 
   /* Header heights — change drives the shrink animation */
-  --header-h-large: 150px;
+  --header-h-large: 200px;
   --header-h-small: 92px;
 
   /* Type */
@@ -96,14 +96,14 @@ img {
   position: absolute;
   inset: 0;
   background: var(--header-cream);
-  clip-path: polygon(0 0, 100% 0, 100% 38%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 100%);
 }
 
 /* Logo — center of header, vertically centered, sits across the diagonal */
 
 .logo {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -116,7 +116,7 @@ img {
 
 .logo img {
   display: block;
-  height: 70px;          /* large header state. upload logo as svg at 140px ht or more */
+  height: 100px;          /* large header state. upload logo as svg at 140px ht or more */
   width: auto;
   transition: height 0.25s ease;
 }
@@ -160,17 +160,17 @@ img {
   right: 40px;
   bottom: 18px;
   display: flex;
-  gap: 28px;
+  gap: 35px;
   z-index: 3;
 }
 
 .nav-desktop a {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 1.5rem;
   color: #ffffff;
   letter-spacing: 0.02em;
   position: relative;
-  padding-bottom: 3px;
+  padding-bottom: 10px;
   transition: opacity 0.2s ease;
 }
 
