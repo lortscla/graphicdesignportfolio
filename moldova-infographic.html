@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Educational Infographic — Claire Lorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-grid-moldova {
+      display: grid;
+      gap: var(--gutter);
+      grid-template-columns: 1fr 1.4fr 1fr;
+      grid-template-areas:
+        "sketch    banner   frame"
+        "laptop    banner   harvester"
+        "posters   banner   illustrations";
+    }
+    .project-grid-moldova .area-sketch { grid-area: sketch; aspect-ratio: 3 / 4; }
+    .project-grid-moldova .area-laptop { grid-area: laptop; aspect-ratio: 16 / 10; }
+    .project-grid-moldova .area-posters { grid-area: posters; aspect-ratio: 4 / 3; }
+    .project-grid-moldova .area-banner { grid-area: banner; aspect-ratio: 9 / 19; }
+    .project-grid-moldova .area-frame { grid-area: frame; aspect-ratio: 4 / 5; }
+    .project-grid-moldova .area-harvester { grid-area: harvester; aspect-ratio: 4 / 3; }
+    .project-grid-moldova .area-illustrations { grid-area: illustrations; aspect-ratio: 4 / 3; }
+    @media (max-width: 1511px) {
+      .project-grid-moldova {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        justify-items: center;
+      }
+      .project-grid-moldova > * { width: 100%; }
+      .project-grid-moldova .area-sketch { max-width: 440px; }
+      .project-grid-moldova .area-laptop { max-width: 660px; }
+      .project-grid-moldova .area-posters { max-width: 440px; }
+      .project-grid-moldova .area-banner { max-width: 440px; }
+      .project-grid-moldova .area-frame { max-width: 440px; }
+      .project-grid-moldova .area-harvester { max-width: 440px; }
+      .project-grid-moldova .area-illustrations { max-width: 440px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-cream" aria-hidden="true"></div>
+      <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
+        <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
+      </a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a href="about.html">About</a>
+      <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page page-child">
+    <div class="child-wrapper child-wrapper-project">
+      <h1 class="child-title">Educational Infographic</h1>
+      <p class="child-subtitle">Client: BEintheKNOW.org (fictitious)</p>
+      <p class="child-body">Educational infographic, poster campaign, and website design. The infographic illustrates information about a Moldova, a lesser known country globally. The poster campaign highlights a current issue in Moldova, and the website focuses on showing users countries that share similarities such as language.</p>
+
+      <div class="project-grid project-grid-moldova">
+        <div class="project-cell area-sketch" aria-label="Sketch concept of Moldova infographic placeholder"></div>
+        <div class="project-cell area-laptop" aria-label="Laptop showing BEintheKNOW Moldova website placeholder"></div>
+        <div class="project-cell area-posters" aria-label="Two poster mockups for the BEintheKNOW campaign placeholder"></div>
+        <div class="project-cell area-banner" aria-label="Vertical banner — Moldova history, traditions, agriculture, and architecture placeholder"></div>
+        <div class="project-cell area-frame" aria-label="Framed map of Moldova on wall placeholder"></div>
+        <div class="project-cell area-harvester" aria-label="Combine harvester illustration placeholder"></div>
+        <div class="project-cell area-illustrations" aria-label="Sunflower, pan flute, and arched architecture illustrations placeholder"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Claire Lorts</p>
+    <p>Designed and Built by Claire Lorts</p>
+    <p>Contact: My Linktree</p>
+    <p>Boalsburg, PA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

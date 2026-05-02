@@ -10,33 +10,24 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ========= HEADER ========= -->
+    <!-- ========= HEADER ========= -->
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
+      <!-- Cream layer with angled cut -->
       <div class="header-cream" aria-hidden="true"></div>
 
+      <!-- Logo (links to homepage) -->
       <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
-  <img src="logo.png" alt="Claire Lorts — Graphic Design" />
-</a>
-        <span class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-            <text x="6" y="48" font-family="'Cormorant Garamond', serif"
-                  font-size="54" font-weight="700" fill="#1a1a1a">C</text>
-            <text x="28" y="48" font-family="'Cormorant Garamond', serif"
-                  font-size="54" font-weight="700" fill="#8B1A1A">L</text>
-          </svg>
-        </span>
-        <span class="logo-text">
-          <span class="logo-name">CLAIRE LORTS</span>
-          <span class="logo-tag">GRAPHIC DESIGN</span>
-        </span>
-      </a>
+  <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
 
+
+      <!-- Desktop nav -->
       <nav class="nav-desktop" aria-label="Primary">
-        <a href="about.html" class="active">About</a>
-        <a href="https://example.com" target="_blank" rel="noopener noreferrer">Contact</a>
+        <a href="about.html">About</a>
+        <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
       </nav>
 
+      <!-- Mobile hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="bar bar-1"></span>
         <span class="bar bar-2"></span>
@@ -44,12 +35,13 @@
       </button>
     </div>
 
+    <!-- Mobile dropdown nav -->
     <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
-      <a href="about.html" class="active">About</a>
-      <a href="https://example.com" target="_blank" rel="noopener noreferrer">Contact</a>
+      <a href="about.html">About</a>
+      <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
     </nav>
   </header>
-
+  
   <!-- ========= ABOUT CONTENT ========= -->
   <main class="page page-child">
     <div class="child-wrapper child-wrapper-about">
@@ -57,20 +49,22 @@
 
       <div class="about-content">
         <!-- Profile photo placeholder -->
-        <div class="about-photo" aria-label="Profile photo placeholder"></div>
+        <div class="about-photo" aria-label="Profile photo"> 
+          <img src="images/about-portrait.webp" alt="Profile photo of Claire Lorts">
+        </div>
 
         <div class="about-text">
           <p>Thank you for visiting my portfolio! I am a recent graduate of Graphic and
-            Interactive Design from the Harrisburg Area Community College in Harrisburg, PA,
+            Interactive Design from the Harrisburg Area Community College in Harrisburg Pennsylvania,
             and have a background in research biology and education. I have a side business,
-            <a href="https://example.com" target="_blank" rel="noopener noreferrer">Claire Lorts Designs</a>,
+            <a href="https://clairelorts.com" target="_blank" rel="noopener noreferrer">Claire Lorts Designs</a>,
             designing and crafting sterling silver and wooden jewelry in addition to lapidary work.</p>
 
           <p>I am thrilled to start a new chapter in graphic design and have interests in
             packaging design and problem solving through visual communication, and
             maintain a flexible mindset regarding my future direction in the field.</p>
 
-          <p>I live in Central Pennsylvania with my husband and cat, and enjoy visiting family in
+          <p>I live in Pennsylvania with my husband and cat, and enjoy visiting family in
             Michigan and Nevada! Please do not hesitate to contact me with any questions!</p>
         </div>
       </div>

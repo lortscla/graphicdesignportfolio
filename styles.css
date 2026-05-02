@@ -14,7 +14,7 @@
 :root {
   /* Colors — replicated from the visual design */
   --page-bg: #3A3635;        /* dark page outer background */
-  --header-cream: #F1ECE0;   /* warm cream on header */
+  --header-cream: #f6f3e8;   /* warm cream or gray on header */
   --dark-band: #3A3635;      /* dark angled band + footer */
   --content-bg: #FFFFFF;     /* main content card bg */
   --red: #8B1A1A;            /* logo accent + buttons */
@@ -284,12 +284,20 @@ img {
 /* Cells keep per-cell aspect ratio; row no longer stretches them to match */
 
 
-/* Column ratios per row */
-.row-equal { grid-template-columns: 3.34fr 1fr; }
-.row-1-2   { grid-template-columns: 1fr 2fr; }
-.row-2-1   { grid-template-columns: 2fr 1fr; }
-.row-3-2   { grid-template-columns: 3fr 2fr; }
-.row-2-3   { grid-template-columns: 2fr 3fr; }
+/* =========================================================
+   HOMEPAGE — each row independently editable
+   At 1512px design width: content = 1432px, gap = 40px
+   ========================================================= */
+
+/* Desktop ratios */
+.row-1 { grid-template-columns: 3.35fr 1fr; }     /* rocks   | joker        */
+.row-2 { grid-template-columns: 1fr 2.21fr; }     /* tshirt  | bottles      */
+.row-3 { grid-template-columns: 3fr 1.51fr; }     /* cake    | collage      */
+.row-4 { grid-template-columns: 1fr 1.295fr; }     /* lifecycle | typography */
+.row-5 { grid-template-columns: 1.86fr 1fr; }     /* moldova | whiskey      */
+.row-6 { grid-template-columns: 1.023fr 2fr; }     /* mixing  | botanical    */
+.row-7 { grid-template-columns: 1fr 1fr; }     /* aurora  | newspaper    */
+
 
 /* Image cell — placeholder gray box with a 1px black frame.
    Uses min-height (not aspect-ratio) so cells in the same grid row
@@ -417,9 +425,9 @@ img {
 
 .about-content {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 300px 1fr;
   gap: 30px;
-  max-width: 760px;
+  max-width: 850px;
   margin: 0 auto;
   align-items: start;  /* keep text at top when row-spanning */
 }
@@ -429,6 +437,11 @@ img {
   aspect-ratio: 1 / 1;
   background: #d6d6d6;
   position: relative;
+}
+
+.about-photo img {
+  width: 100%;
+ height: auto;
 }
 
 .about-photo::after {
@@ -471,6 +484,8 @@ img {
   aspect-ratio: 4 / 3;
   position: relative;
   overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .project-cell::after {
@@ -534,17 +549,42 @@ img {
 
 /* Stack everything below the design width -----------------------------------------*/
 
-@media (max-width: 1511px) {
-  .grid-row,
-  .project-grid {
-    grid-template-columns: 1fr !important;
-  }
+@media (max-width: 1510px) {
+
   .project-cell-large,
   .project-cell-stack {
     grid-column: span 1;
   }
   .project-cell-large { aspect-ratio: auto; }
   .project-cell-stack { flex-direction: column; }
+
+  .grid-row {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+  }
+  .grid-row .cell {
+    width: 100%;
+  }
+
+  /* Per-cell max-widths derived from each row's desktop ratio */
+  .row-1 .cell                    { max-width: 696px; }
+
+  .row-2 .cell:nth-child(1)       { max-width: 464px; }
+  .row-2 .cell:nth-child(2)       { max-width: 928px; }
+
+  .row-3 .cell:nth-child(1)       { max-width: 835px; }
+  .row-3 .cell:nth-child(2)       { max-width: 557px; }
+
+  .row-4 .cell                    { max-width: 696px; }
+
+  .row-5 .cell:nth-child(1)       { max-width: 928px; }
+  .row-5 .cell:nth-child(2)       { max-width: 464px; }
+
+  .row-6 .cell:nth-child(1)       { max-width: 464px; }
+  .row-6 .cell:nth-child(2)       { max-width: 928px; }
+
+  .row-7 .cell                    { max-width: 696px; }
+
 }
 
 
@@ -586,7 +626,7 @@ img {
     .hamburger {
       display: block;
     top: auto;
-    bottom: 9px;
+    bottom: 2px;
     transform: none;
     right: 20px;
   }
@@ -655,10 +695,11 @@ img {
   }
 
   .about-photo {
-    max-width: 220px;
+    max-width: 230px;
     margin: 0 auto;
   }
 
+ 
   .child-title {
     font-size: 24px;
   }

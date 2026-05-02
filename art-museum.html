@@ -3,74 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Winery Branding, Labels, Coasters &amp; Web Design | Claire Lorts</title>
+  <title>Art Museum Website Design & Development — Claire Lorts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-grid-museum {
+      display: grid;
+      gap: var(--gutter);
+      grid-template-columns: 3fr 1fr;
+      grid-template-areas:
+        "laptop phone"
+        "button button";
+    }
+    .project-grid-museum .area-laptop { grid-area: laptop; aspect-ratio: 16 / 10; }
+    .project-grid-museum .area-phone { grid-area: phone; aspect-ratio: 9 / 19; }
+    .project-grid-museum .area-button { grid-area: button; justify-self: center; }
+    @media (max-width: 1511px) {
+      .project-grid-museum {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        justify-items: center;
+      }
+      .project-grid-museum > * { width: 100%; }
+      .project-grid-museum .area-laptop { max-width: 1000px; }
+      .project-grid-museum .area-phone { max-width: 320px; }
+    }
+  </style>
 </head>
 <body>
-  <!-- ========= HEADER ========= -->
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <!-- Cream layer with angled cut -->
       <div class="header-cream" aria-hidden="true"></div>
-
-      <!-- Logo (links to homepage) -->
       <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
-  <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
-
-
-      <!-- Desktop nav -->
+        <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
+      </a>
       <nav class="nav-desktop" aria-label="Primary">
         <a href="about.html">About</a>
         <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
       </nav>
-
-      <!-- Mobile hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="bar bar-1"></span>
         <span class="bar bar-2"></span>
         <span class="bar bar-3"></span>
       </button>
     </div>
-
-    <!-- Mobile dropdown nav -->
     <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
       <a href="about.html">About</a>
       <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
     </nav>
   </header>
 
-  <!-- ========= PROJECT CONTENT ========= -->
   <main class="page page-child">
     <div class="child-wrapper child-wrapper-project">
-      <h1 class="child-title">Winery Branding, Labels, Coasters &amp; Web Design</h1>
-      <p class="child-subtitle">Client: Sourdoré Wine</p>
-      <p class="child-body">Branding including logo design, conception of winery brand personality and story, wine labels and coaster
-        set for limited wine series, and website design.</p>
+      <h1 class="child-title">Art Museum Website Design & Development</h1>
+      <p class="child-subtitle">Client: Student Work</p>
+      <p class="child-body">Website design and development of a fictitious art museum. Developed using HTML, CSS, and JavaScript.</p>
 
-      <!-- Project grid -->
-      <div class="project-grid">
-        <!-- Row 1: bottles (2-col span) + computer (1-col span with button) -->
-        <div class="project-cell project-cell-large" aria-label="Wine bottles photo placeholder"></div>
-
-        <div class="project-cell-stack">
-          <div class="project-cell" aria-label="Computer mockup placeholder"></div>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red btn-red-cell">View The Website</a>
-        </div>
-
-        <!-- Row 2: three equal cells -->
-        <div class="project-cell" aria-label="Wine bottle with coasters placeholder"></div>
-        <div class="project-cell" aria-label="Phone Instagram placeholder"></div>
-        <div class="project-cell" aria-label="Tablet placeholder"></div>
+      <div class="project-grid project-grid-museum">
+        <div class="project-cell area-laptop" aria-label="Laptop showing Aurora Art Museum homepage placeholder"></div>
+        <div class="project-cell area-phone" aria-label="Phone showing Aurora Art Museum mobile menu placeholder"></div>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Website</a>
       </div>
     </div>
   </main>
 
-  <!-- ========= FOOTER ========= -->
   <footer class="site-footer">
-    <p>© 2026 Claire Lorts</p>
+    <p>&copy; 2026 Claire Lorts</p>
     <p>Designed and Built by Claire Lorts</p>
     <p>Contact: My Linktree</p>
     <p>Boalsburg, PA</p>

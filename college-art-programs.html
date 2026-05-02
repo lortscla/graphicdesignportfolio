@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Art Programs Campaign — Claire Lorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-grid-artprograms {
+      display: grid;
+      gap: var(--gutter);
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "notebook  busstop  folder-open"
+        "button    busstop  folder-open"
+        "phone     busstop  folder-held";
+    }
+    .project-grid-artprograms .area-notebook { grid-area: notebook; aspect-ratio: 4 / 3; }
+    .project-grid-artprograms .area-phone { grid-area: phone; aspect-ratio: 4 / 3; }
+    .project-grid-artprograms .area-busstop { grid-area: busstop; aspect-ratio: 9 / 16; }
+    .project-grid-artprograms .area-folder-open { grid-area: folder-open; aspect-ratio: 4 / 3; }
+    .project-grid-artprograms .area-folder-held { grid-area: folder-held; aspect-ratio: 4 / 3; }
+    .project-grid-artprograms .area-button { grid-area: button; justify-self: center; align-self: center; }
+    @media (max-width: 1511px) {
+      .project-grid-artprograms {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        justify-items: center;
+      }
+      .project-grid-artprograms > * { width: 100%; }
+      .project-grid-artprograms .area-notebook { max-width: 440px; }
+      .project-grid-artprograms .area-phone { max-width: 440px; }
+      .project-grid-artprograms .area-busstop { max-width: 440px; }
+      .project-grid-artprograms .area-folder-open { max-width: 660px; }
+      .project-grid-artprograms .area-folder-held { max-width: 440px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-cream" aria-hidden="true"></div>
+      <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
+        <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
+      </a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a href="about.html">About</a>
+      <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page page-child">
+    <div class="child-wrapper child-wrapper-project">
+      <h1 class="child-title">College Art Programs Campaign</h1>
+      <p class="child-subtitle">Client: Harrisburg Area Community College</p>
+      <p class="child-body">Informational folder and poster promoting Harrisburg Area Community College's Art Programs.</p>
+
+      <div class="project-grid project-grid-artprograms">
+        <div class="project-cell area-notebook" aria-label="Open notebook with red strap and pen placeholder"></div>
+        <div class="project-cell area-busstop" aria-label="Bus stop poster — Follow Your Creative Path at HACC placeholder"></div>
+        <div class="project-cell area-folder-open" aria-label="Open informational folder showing inside spread placeholder"></div>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Flipbook</a>
+        <div class="project-cell area-phone" aria-label="Phone showing Harrisburg Area Community College Instagram placeholder"></div>
+        <div class="project-cell area-folder-held" aria-label="Informational folder being held open placeholder"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Claire Lorts</p>
+    <p>Designed and Built by Claire Lorts</p>
+    <p>Contact: My Linktree</p>
+    <p>Boalsburg, PA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

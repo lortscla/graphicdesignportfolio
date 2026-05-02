@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Onboarding Campaign — Claire Lorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-grid-onboarding {
+      display: grid;
+      gap: var(--gutter);
+      grid-template-columns: 1fr 1fr 1fr 2fr;
+      grid-template-areas:
+        "shirt-back shirt-front logos desktop";
+    }
+    .project-grid-onboarding .area-shirt-back { grid-area: shirt-back; aspect-ratio: 3 / 4; }
+    .project-grid-onboarding .area-shirt-front { grid-area: shirt-front; aspect-ratio: 3 / 4; }
+    .project-grid-onboarding .area-logos { grid-area: logos; aspect-ratio: 1 / 1; }
+    .project-grid-onboarding .area-desktop { grid-area: desktop; aspect-ratio: 4 / 3; }
+    @media (max-width: 1511px) {
+      .project-grid-onboarding {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        justify-items: center;
+      }
+      .project-grid-onboarding > * { width: 100%; }
+      .project-grid-onboarding .area-shirt-back { max-width: 440px; }
+      .project-grid-onboarding .area-shirt-front { max-width: 440px; }
+      .project-grid-onboarding .area-logos { max-width: 440px; }
+      .project-grid-onboarding .area-desktop { max-width: 660px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-cream" aria-hidden="true"></div>
+      <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
+        <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
+      </a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a href="about.html">About</a>
+      <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page page-child">
+    <div class="child-wrapper child-wrapper-project">
+      <h1 class="child-title">College Onboarding Campaign</h1>
+      <p class="child-subtitle">Client: Harrisburg Area Community College</p>
+      <p class="child-body">Submission for a logo and t-shirt design competition for Harrisburg Area Community College's Onboarding program, Level Up, along with the design of an interactive desktop that new students may download an use while starting at the university.</p>
+
+      <div class="project-grid project-grid-onboarding">
+        <div class="project-cell area-shirt-back" aria-label="T-shirt back design — Start Strong placeholder"></div>
+        <div class="project-cell area-shirt-front" aria-label="T-shirt front design — Finish Stronger with tree graphic placeholder"></div>
+        <div class="project-cell area-logos" aria-label="Level Up logo variations placeholder"></div>
+        <div class="project-cell area-desktop" aria-label="Computer desktop background — Level Up Finish Stronger interactive design placeholder"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Claire Lorts</p>
+    <p>Designed and Built by Claire Lorts</p>
+    <p>Contact: My Linktree</p>
+    <p>Boalsburg, PA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winery Branding, Labels, Coasters & Web Design — Claire Lorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-grid-winery {
+      display: grid;
+      gap: var(--gutter);
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-areas:
+        "bottles bottles computer computer"
+        "bottles bottles button   button"
+        "smallbottle phone tablet tablet";
+    }
+    .project-grid-winery .area-bottles { grid-area: bottles; aspect-ratio: 4 / 3; }
+    .project-grid-winery .area-computer { grid-area: computer; aspect-ratio: 16 / 9; }
+    .project-grid-winery .area-button { grid-area: button; justify-self: center; align-self: center; }
+    .project-grid-winery .area-smallbottle { grid-area: smallbottle; aspect-ratio: 1 / 1; }
+    .project-grid-winery .area-phone { grid-area: phone; aspect-ratio: 1 / 1; }
+    .project-grid-winery .area-tablet { grid-area: tablet; aspect-ratio: 2 / 1; }
+    @media (max-width: 1511px) {
+      .project-grid-winery {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        justify-items: center;
+      }
+      .project-grid-winery > * { width: 100%; }
+      .project-grid-winery .area-bottles { max-width: 700px; }
+      .project-grid-winery .area-computer { max-width: 660px; }
+      .project-grid-winery .area-smallbottle { max-width: 440px; }
+      .project-grid-winery .area-phone { max-width: 440px; }
+      .project-grid-winery .area-tablet { max-width: 660px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-cream" aria-hidden="true"></div>
+      <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
+        <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
+      </a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a href="about.html">About</a>
+      <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page page-child">
+    <div class="child-wrapper child-wrapper-project">
+      <h1 class="child-title">Winery Branding, Labels, Coasters & Web Design</h1>
+      <p class="child-subtitle">Client: Student Work</p>
+      <p class="child-body">Branding including logo design, conception of winery brand personality and story, wine labels and coaster set for limited wine series, and website design.</p>
+
+      <div class="project-grid project-grid-winery">
+        <div class="project-cell area-bottles" aria-label="Four wine bottles with branding placeholder"></div>
+        <div class="project-cell area-computer" aria-label="Computer and phone showing Common Ground winery website placeholder"></div>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Website</a>
+        <div class="project-cell area-smallbottle" aria-label="Wine bottle with coasters placeholder"></div>
+        <div class="project-cell area-phone" aria-label="Phone showing Synergy wine Instagram placeholder"></div>
+        <div class="project-cell area-tablet" aria-label="Tablet showing 'Lessons From The Second Season' wine pages placeholder"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Claire Lorts</p>
+    <p>Designed and Built by Claire Lorts</p>
+    <p>Contact: My Linktree</p>
+    <p>Boalsburg, PA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

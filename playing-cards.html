@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playing Cards, Packaging & Calendar — Claire Lorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-grid-cards {
+      display: grid;
+      gap: var(--gutter);
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "calendar-big   cardbox      cards-spread"
+        "calendar-big   pattern      jokers"
+        "calendars-row  pattern      jokers";
+    }
+    .project-grid-cards .area-calendar-big { grid-area: calendar-big; aspect-ratio: 3 / 4; }
+    .project-grid-cards .area-cardbox { grid-area: cardbox; aspect-ratio: 1 / 1; }
+    .project-grid-cards .area-cards-spread { grid-area: cards-spread; aspect-ratio: 1 / 1; }
+    .project-grid-cards .area-pattern { grid-area: pattern; aspect-ratio: 9 / 16; }
+    .project-grid-cards .area-jokers { grid-area: jokers; aspect-ratio: 4 / 3; }
+    .project-grid-cards .area-calendars-row { grid-area: calendars-row; aspect-ratio: 4 / 3; }
+    @media (max-width: 1511px) {
+      .project-grid-cards {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        justify-items: center;
+      }
+      .project-grid-cards > * { width: 100%; }
+      .project-grid-cards .area-calendar-big { max-width: 440px; }
+      .project-grid-cards .area-cardbox { max-width: 440px; }
+      .project-grid-cards .area-cards-spread { max-width: 440px; }
+      .project-grid-cards .area-pattern { max-width: 300px; }
+      .project-grid-cards .area-jokers { max-width: 440px; }
+      .project-grid-cards .area-calendars-row { max-width: 660px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-cream" aria-hidden="true"></div>
+      <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
+        <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
+      </a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a href="about.html">About</a>
+      <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page page-child">
+    <div class="child-wrapper child-wrapper-project">
+      <h1 class="child-title">Playing Cards, Packaging & Calendar</h1>
+      <p class="child-subtitle">Client: Perennial Cards (fictitious)</p>
+      <p class="child-body">Design and theme creation of a complete deck of playing cards, packaging design for the deck of cards, and logo design for Perennial Cards. Calendar design, each featuring a different card game with a graphic illustration of the game.</p>
+
+      <div class="project-grid project-grid-cards">
+        <div class="project-cell area-calendar-big" aria-label="November Spoons calendar page placeholder"></div>
+        <div class="project-cell area-cardbox" aria-label="Perennial Cards 2026 packaging box placeholder"></div>
+        <div class="project-cell area-cards-spread" aria-label="Playing cards spread on table placeholder"></div>
+        <div class="project-cell area-pattern" aria-label="Playing card back pattern design placeholder"></div>
+        <div class="project-cell area-jokers" aria-label="Two joker cards — winter tree and spring tree placeholder"></div>
+        <div class="project-cell area-calendars-row" aria-label="September Rummy and October Euchre calendar pages placeholder"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Claire Lorts</p>
+    <p>Designed and Built by Claire Lorts</p>
+    <p>Contact: My Linktree</p>
+    <p>Boalsburg, PA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
