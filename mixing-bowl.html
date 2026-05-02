@@ -17,27 +17,29 @@
 <link rel="manifest" href="favicon/site.webmanifest" />
 
   <style>
-    .project-grid-mixingbowl {
-      display: grid;
-      gap: var(--gutter);
-      grid-template-columns: 3fr 1fr;
-      grid-template-areas:
-        "laptop phone"
-        "button button";
-    }
-    .project-grid-mixingbowl .area-laptop { grid-area: laptop; aspect-ratio: 16 / 10; }
-    .project-grid-mixingbowl .area-phone { grid-area: phone; aspect-ratio: 9 / 19; }
-    .project-grid-mixingbowl .area-button { grid-area: button; justify-self: center; }
-    @media (max-width: 1511px) {
-      .project-grid-mixingbowl {
-        grid-template-columns: 1fr;
-        grid-template-areas: none;
-        justify-items: center;
-      }
-      .project-grid-mixingbowl > * { width: 100%; }
-      .project-grid-mixingbowl .area-laptop { max-width: 1000px; }
-      .project-grid-mixingbowl .area-phone { max-width: 320px; }
-    }
+.project-grid-mixingbowl {
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "laptop"
+    "button";
+}
+.project-grid-mixingbowl .area-laptop { 
+  grid-area: laptop; 
+  aspect-ratio: 16 / 8;
+  max-width: 1200px;        /* edit to taste */
+  width: 100%;
+  justify-self: center;
+}
+.project-grid-mixingbowl .area-button { 
+  grid-area: button; 
+  justify-self: center; 
+}
+
+@media (max-width: 1511px) {
+  .project-grid-mixingbowl .area-laptop { max-width: 1000px; }
+}
   </style>
 </head>
 <body>
@@ -70,9 +72,10 @@
       <p class="child-body">Conception, design, and development as a desktop and mobile application of a social media platform focused on users with recipes in progress. Users can post recipes to receive feedback in addition to providing suggestions for recipes.</p>
 
       <div class="project-grid project-grid-mixingbowl">
-        <div class="project-cell area-laptop" aria-label="Laptop showing The Mixing Bowl recipe platform placeholder"></div>
-        <div class="project-cell area-phone" aria-label="Phone showing The Mixing Bowl mobile app placeholder"></div>
-        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Website</a>
+        <div class="project-cell area-laptop" aria-label="Laptop showing The Mixing Bowl recipe platform placeholder">
+          <img src="images/mixingbowl.webp" alt="The Mixing Bowl laptop mockup">
+        </div>
+        <a href="https://lortsdesign.com/projects/Project_2_art114/" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Website</a>
       </div>
     </div>
   </main>

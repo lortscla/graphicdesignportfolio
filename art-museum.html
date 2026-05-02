@@ -20,13 +20,12 @@
     .project-grid-museum {
       display: grid;
       gap: var(--gutter);
-      grid-template-columns: 3fr 1fr;
+      grid-template-columns: 1fr;
       grid-template-areas:
-        "laptop phone"
-        "button button";
+        "laptop "
+        "button ";
     }
-    .project-grid-museum .area-laptop { grid-area: laptop; aspect-ratio: 16 / 10; }
-    .project-grid-museum .area-phone { grid-area: phone; aspect-ratio: 9 / 19; }
+    .project-grid-museum .area-laptop { grid-area: laptop; aspect-ratio: 16 / 8; }
     .project-grid-museum .area-button { grid-area: button; justify-self: center; }
     @media (max-width: 1511px) {
       .project-grid-museum {
@@ -36,7 +35,6 @@
       }
       .project-grid-museum > * { width: 100%; }
       .project-grid-museum .area-laptop { max-width: 1000px; }
-      .project-grid-museum .area-phone { max-width: 320px; }
     }
   </style>
 </head>
@@ -70,9 +68,10 @@
       <p class="child-body">Website design and development of a fictitious art museum. Developed using HTML, CSS, and JavaScript.</p>
 
       <div class="project-grid project-grid-museum">
-        <div class="project-cell area-laptop" aria-label="Laptop showing Aurora Art Museum homepage placeholder"></div>
-        <div class="project-cell area-phone" aria-label="Phone showing Aurora Art Museum mobile menu placeholder"></div>
-        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Website</a>
+        <div class="project-cell area-laptop" aria-label="Laptop showing Aurora Art Museum homepage placeholder">
+          <img src="images/artmuseum.webp" alt="Aurora Art Museum laptop mockup">
+        </div>
+        <a href="https://lortscla.github.io/auroraartmuseum/" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Website</a>
       </div>
     </div>
   </main>
