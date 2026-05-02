@@ -25,9 +25,10 @@
         "billboard billboard"
         "phone     banner";
     }
-    .project-grid-mentalhealth .area-billboard { grid-area: billboard; aspect-ratio: 16 / 9; }
-    .project-grid-mentalhealth .area-phone { grid-area: phone; aspect-ratio: 4 / 3; }
-    .project-grid-mentalhealth .area-banner { grid-area: banner; aspect-ratio: 4 / 3; }
+    .project-grid-mentalhealth .area-billboard { grid-area: billboard; aspect-ratio: 16 / 7.5; border: 1px solid var(--frame-border)}
+    .project-grid-mentalhealth .area-phone { grid-area: phone; aspect-ratio: 3 / 4; border: 1px solid var(--frame-border)}
+    .project-grid-mentalhealth .area-banner { grid-area: banner; aspect-ratio: 2.57 / 4; border: 1px solid var(--frame-border);
+}
     @media (max-width: 1511px) {
       .project-grid-mentalhealth {
         grid-template-columns: 1fr;
@@ -71,9 +72,15 @@
       <p class="child-body">This campaign aims to raise awareness, reduce stigma, and inspire proactive engagement around mental health through three cohesive yet unique designs of a billboard, vertical banner, and social media ad</p>
 
       <div class="project-grid project-grid-mentalhealth">
-        <div class="project-cell area-billboard" aria-label="Subway billboard — Never stop searching for your light placeholder"></div>
-        <div class="project-cell area-phone" aria-label="Phone showing campaign in landscape orientation placeholder"></div>
-        <div class="project-cell area-banner" aria-label="Vertical banner — You're never too deep to find the light placeholder"></div>
+        <div class="project-cell area-billboard" aria-label="Subway billboard — Never stop searching for your light placeholder">
+          <img src="images/billboard-1050.webp" alt="Never Stop Searching For Your Light">
+        </div>
+        <div class="project-cell area-phone" aria-label="Phone showing campaign in landscape orientation placeholder">
+          <img src="images/mental-health-smad.webp" alt="Mental health campaign phone mockup">
+        </div>
+        <div class="project-cell area-banner" aria-label="Vertical banner — You're never too deep to find the light placeholder">
+          <img src="images/mental-health-vertical-banner.webp" alt="You're never too deep to find the light">
+        </div>
       </div>
     </div>
   </main>

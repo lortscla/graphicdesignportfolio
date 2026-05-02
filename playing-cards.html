@@ -20,18 +20,18 @@
     .project-grid-cards {
       display: grid;
       gap: var(--gutter);
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1.77fr;
       grid-template-areas:
-        "calendar-big   cardbox      cards-spread"
-        "calendar-big   pattern      jokers"
-        "calendars-row  pattern      jokers";
+        "calendar-big   cardbox   cards-spread"
+     
+        "calendars-row  pattern   jokers";
     }
-    .project-grid-cards .area-calendar-big { grid-area: calendar-big; aspect-ratio: 3 / 4; }
-    .project-grid-cards .area-cardbox { grid-area: cardbox; aspect-ratio: 1 / 1; }
-    .project-grid-cards .area-cards-spread { grid-area: cards-spread; aspect-ratio: 1 / 1; }
+    .project-grid-cards .area-calendar-big { grid-area: calendar-big; aspect-ratio: 3 / 4.41; }
+    .project-grid-cards .area-cardbox { grid-area: cardbox; aspect-ratio: 1 / 1.47; }
+    .project-grid-cards .area-cards-spread { grid-area: cards-spread; aspect-ratio: 1.2 / 1; }
     .project-grid-cards .area-pattern { grid-area: pattern; aspect-ratio: 9 / 16; }
-    .project-grid-cards .area-jokers { grid-area: jokers; aspect-ratio: 4 / 3; }
-    .project-grid-cards .area-calendars-row { grid-area: calendars-row; aspect-ratio: 4 / 3; }
+    .project-grid-cards .area-jokers { grid-area: jokers; aspect-ratio: 4.5 / 3; }
+    .project-grid-cards .area-calendars-row { grid-area: calendars-row; aspect-ratio: 3 / 4.41; }
     @media (max-width: 1511px) {
       .project-grid-cards {
         grid-template-columns: 1fr;
@@ -39,11 +39,11 @@
         justify-items: center;
       }
       .project-grid-cards > * { width: 100%; }
-      .project-grid-cards .area-calendar-big { max-width: 440px; }
+      .project-grid-cards .area-calendar-big { max-width: 400px; }
       .project-grid-cards .area-cardbox { max-width: 440px; }
-      .project-grid-cards .area-cards-spread { max-width: 440px; }
+      .project-grid-cards .area-cards-spread { max-width: 540px; }
       .project-grid-cards .area-pattern { max-width: 300px; }
-      .project-grid-cards .area-jokers { max-width: 440px; }
+      .project-grid-cards .area-jokers { max-width: 700px; }
       .project-grid-cards .area-calendars-row { max-width: 660px; }
     }
   </style>
@@ -78,12 +78,24 @@
       <p class="child-body">Design and theme creation of a complete deck of playing cards, packaging design for the deck of cards, and logo design for Perennial Cards. Calendar design, each featuring a different card game with a graphic illustration of the game.</p>
 
       <div class="project-grid project-grid-cards">
-        <div class="project-cell area-calendar-big" aria-label="November Spoons calendar page placeholder"></div>
-        <div class="project-cell area-cardbox" aria-label="Perennial Cards 2026 packaging box placeholder"></div>
-        <div class="project-cell area-cards-spread" aria-label="Playing cards spread on table placeholder"></div>
-        <div class="project-cell area-pattern" aria-label="Playing card back pattern design placeholder"></div>
-        <div class="project-cell area-jokers" aria-label="Two joker cards — winter tree and spring tree placeholder"></div>
-        <div class="project-cell area-calendars-row" aria-label="September Rummy and October Euchre calendar pages placeholder"></div>
+        <div class="project-cell area-calendar-big" aria-label="November Spoons calendar page placeholder">
+          <img src="images/calendar-page1.webp" alt="November Spoons calendar page">
+        </div>
+        <div class="project-cell area-cardbox" aria-label="Perennial Cards 2026 packaging box placeholder">
+          <img src="images/card-packaging-mockup.webp" alt="Perennial Cards packaging box">
+        </div>
+        <div class="project-cell area-cards-spread" aria-label="Playing cards spread on table placeholder">
+          <img src="images/cards-mockup.webp" alt="Playing cards spread on table">
+        </div>
+        <div class="project-cell area-pattern" aria-label="Playing card back pattern design placeholder">
+          <img src="images/cards-packaging.webp" alt="Playing card back pattern design">
+        </div>
+        <div class="project-cell area-jokers" aria-label="Two joker cards — winter tree and spring tree placeholder">
+          <img src="images/cards-jokers.webp" alt="Two joker cards — winter tree and spring tree">
+        </div>
+        <div class="project-cell area-calendars-row" aria-label="September Rummy and October Euchre calendar pages placeholder">
+          <img src="images/calendar-page2.webp" alt="September Rummy and October Euchre calendar pages">
+        </div>
       </div>
     </div>
   </main>
