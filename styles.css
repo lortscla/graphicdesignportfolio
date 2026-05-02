@@ -13,7 +13,7 @@
 
 :root {
   /* Colors — replicated from the visual design */
-  --page-bg: #2D2A28;        /* dark page outer background */
+  --page-bg: #3A3635;        /* dark page outer background */
   --header-cream: #F1ECE0;   /* warm cream on header */
   --dark-band: #3A3635;      /* dark angled band + footer */
   --content-bg: #FFFFFF;     /* main content card bg */
@@ -21,7 +21,7 @@
   --red-hover: #701414;
   --text-dark: #2C2C2C;
   --text-muted: #5b5b5b;
-  --frame-border: #000000;   /* 1px frame around image cells */
+  --frame-border: #3A3635;   /* 1px frame around image cells */
 
   /* Spacing */
   --gutter-desktop: 40px;
@@ -49,6 +49,8 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    max-width: 1512px;
+  margin: 0 auto;
 }
 
 a {
@@ -277,7 +279,10 @@ img {
 .grid-row {
   display: grid;
   gap: var(--gutter);
+  align-items: start;
 }
+/* Cells keep per-cell aspect ratio; row no longer stretches them to match */
+
 
 /* Column ratios per row */
 .row-equal { grid-template-columns: 1fr 1fr; }
@@ -298,6 +303,29 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+
+/* Hide gray placeholder + diagonal stripes once a real image is dropped in */
+.cell:has(img),
+.about-photo:has(img),
+.project-cell:has(img) {
+  background: transparent;
+}
+
+.cell:has(img)::after,
+.about-photo:has(img)::after,
+.project-cell:has(img)::after {
+  display: none;
+}
+
+.cell img,
+.about-photo img,
+.project-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Subtle "image placeholder" texture so the boxes don't read as broken */
@@ -439,7 +467,7 @@ img {
 }
 
 .project-cell {
-  background: #d6d6d6;
+  background: #83e0f3;
   aspect-ratio: 4 / 3;
   position: relative;
   overflow: hidden;
@@ -503,6 +531,23 @@ img {
   margin: 0;
 }
 
+
+/* Stack everything below the design width -----------------------------------------*/
+
+@media (max-width: 1511px) {
+  .grid-row,
+  .project-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .project-cell-large,
+  .project-cell-stack {
+    grid-column: span 1;
+  }
+  .project-cell-large { aspect-ratio: auto; }
+  .project-cell-stack { flex-direction: column; }
+}
+
+
 /* =========================================================
    RESPONSIVE — TABLET
    ========================================================= */
@@ -518,22 +563,6 @@ img {
   .logo-tag { font-size: 12px; }
   .nav-desktop { right: 28px; }
   .nav-desktop a { font-size: 18px; }
-
-
-  .grid-row,
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-  .project-cell-large,
-  .project-cell-stack {
-    grid-column: span 1;
-  }
-  .project-cell-large {
-    aspect-ratio: auto;
-  }
-  .project-cell-stack {
-    flex-direction: column;
-  }
 
 }
 
@@ -602,12 +631,6 @@ img {
   /* Adjust the cream wedge for the smaller header — give logo more cream space */
   .header-cream {
     clip-path: polygon(0 0, 100% 0, 100% 55%, 0 100%);
-  }
-
-
-  /* Cells maintain a friendly min-height when stacked */
-  .cell {
-    min-height: 220px;
   }
 
   .project-cell-stack {
