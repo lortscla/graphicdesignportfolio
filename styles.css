@@ -98,7 +98,7 @@ img {
   position: absolute;
   inset: 0;
   background: var(--header-cream);
-  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 90%);
 }
 
 /* Logo — center of header, vertically centered, sits across the diagonal */
@@ -261,7 +261,7 @@ img {
 
 .page {
   background: var(--content-bg);
-  margin: var(--gutter) var(--gutter) 0;
+  margin: 0;
   padding: var(--gutter);
   min-height: 50vh;
 }
@@ -285,7 +285,7 @@ img {
 
 
 /* Column ratios per row */
-.row-equal { grid-template-columns: 1fr 1fr; }
+.row-equal { grid-template-columns: 3.34fr 1fr; }
 .row-1-2   { grid-template-columns: 1fr 2fr; }
 .row-2-1   { grid-template-columns: 2fr 1fr; }
 .row-3-2   { grid-template-columns: 3fr 2fr; }
