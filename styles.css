@@ -125,10 +125,7 @@ img {
 .site-header.shrunk .logo img {
   height: 50px;          /* shrunk state */
 }
-@media (max-width: 720px) {
-  .logo img { height: 50px; }
-  .site-header.shrunk .logo img { height: 40px; }
-}
+
 
 .logo:hover {
   transform: translate(-50%, -50%) translateY(-6px);
@@ -549,7 +546,7 @@ img {
 
 /* Stack everything below the design width -----------------------------------------*/
 
-@media (max-width: 1510px) {
+@media (max-width: 1000px) {
 
   .project-cell-large,
   .project-cell-stack {
@@ -586,26 +583,39 @@ img {
   .row-6 .cell:nth-child(2)       { max-width: 600px; }
   .row-6 .cell:nth-child(3) { max-width: 600px; }
     
-}
-
-
-/* =========================================================
-   RESPONSIVE — TABLET
-   ========================================================= */
-
-@media (max-width: 1024px) {
-  :root {
-    --header-h-large: 130px;
-    --header-h-small: 80px;
-  }
-
-  .logo-name { font-size: 30px; }
+    .logo-name { font-size: 30px; }
   .site-header.shrunk .logo-name { font-size: 24px; }
   .logo-tag { font-size: 12px; }
   .nav-desktop { right: 28px; }
   .nav-desktop a { font-size: 18px; }
 
+  .project-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: none !important;
+    justify-items: center;
+  }
+
+  /* Each cell carries `grid-area: <name>` from its desktop
+     layout. Once grid-template-areas is wiped, those named
+     areas no longer exist — reset to auto so every child
+     flows vertically in source order. */
+  .project-grid > * {
+    grid-area: auto !important;
+    width: 100%;
+    max-width: 700px;
+  }
+
+   /* Buttons size to their content, not the column */
+  .project-grid > .btn-red {
+    width: auto;
+    max-width: none;
+  }
+  
+  .logo img { height: 80px; }
+
 }
+
+
 
 /* =========================================================
    RESPONSIVE — MOBILE
@@ -622,6 +632,10 @@ img {
   .nav-desktop {
     display: none;
   }
+
+  
+  .logo img { height: 50px; }
+  .site-header.shrunk .logo img { height: 40px; }
 
 
     .hamburger {
