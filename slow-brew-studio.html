@@ -27,19 +27,25 @@
     .project-grid-slowbrew {
       display: grid;
       gap: var(--gutter);
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
       grid-template-areas:
         "computer phone brandbook brandbook"
         "computer plate logos     graphics"
         ".        .     button    button";
     }
-    .project-grid-slowbrew .area-computer { grid-area: computer; aspect-ratio: 4 / 3; }
-    .project-grid-slowbrew .area-phone { grid-area: phone; aspect-ratio: 9 / 16; }
-    .project-grid-slowbrew .area-plate { grid-area: plate; aspect-ratio: 1 / 1; }
-    .project-grid-slowbrew .area-brandbook { grid-area: brandbook; aspect-ratio: 16 / 9; }
-    .project-grid-slowbrew .area-logos { grid-area: logos; aspect-ratio: 4 / 3; }
-    .project-grid-slowbrew .area-graphics { grid-area: graphics; aspect-ratio: 4 / 3; }
-    .project-grid-slowbrew .area-button { grid-area: button;  }
+    .project-grid-slowbrew .area-computer { grid-area: computer; aspect-ratio: 4 / 6; order:5;}
+    .project-grid-slowbrew .area-phone { grid-area: phone; aspect-ratio: 9 / 14.65; order:6;}
+    .project-grid-slowbrew .area-plate { grid-area: plate; aspect-ratio: 1 / 1.1; order:7;}
+    .project-grid-slowbrew .area-brandbook { grid-area: brandbook; aspect-ratio: 16 / 8; order:1; }
+    .project-grid-slowbrew .area-logos { grid-area: logos; aspect-ratio: 4 / 2; order:3;}
+    .project-grid-slowbrew .area-graphics { grid-area: graphics; aspect-ratio: 4 / 2; order:2;}
+    .project-grid-slowbrew .area-button { grid-area: button; justify-self: center; align-self: center;  order:4}
+
+     .project-grid-slowbrew .area-graphics img,
+    .project-grid-slowbrew .area-logos img {
+      border: 1px solid black;
+    }
+
     @media (max-width: 1000px) {
       .project-grid-slowbrew {
         grid-template-columns: 1fr;
@@ -86,13 +92,25 @@
       <p class="child-body">Logo design, brand guide with visual elements, website design, and social media ad for small cafe and studio business with a Scandinavian visual identity.</p>
 
       <div class="project-grid project-grid-slowbrew">
-        <div class="project-cell area-computer" aria-label="Computer mockup showing Slow Brew Studio website placeholder"></div>
-        <div class="project-cell area-phone" aria-label="Phone showing Slow Brew Studio Instagram placeholder"></div>
-        <div class="project-cell area-brandbook" aria-label="Brand book mockup with table of contents placeholder"></div>
-        <div class="project-cell area-plate" aria-label="Ceramic plate with paint colors placeholder"></div>
-        <div class="project-cell area-logos" aria-label="Logos page from brand book placeholder"></div>
-        <div class="project-cell area-graphics" aria-label="Elements and graphics page from brand book placeholder"></div>
-        <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Flipbook</a>
+        <div class="project-cell area-computer" aria-label="Computer mockup showing Slow Brew Studio website placeholder">
+          <img src="images/sbs-website.webp" alt="sbs website">
+        </div>
+        <div class="project-cell area-phone" aria-label="Phone showing Slow Brew Studio Instagram placeholder">
+          <img src="images/sbs-smad.webp" alt="sbs instagram">
+        </div>
+        <div class="project-cell area-brandbook" aria-label="Brand book mockup with table of contents placeholder">
+          <img src="images/sbs-brandguide.webp" alt="sbs brandbook">
+        </div>
+        <div class="project-cell area-plate" aria-label="Ceramic plate with paint colors placeholder">
+          <img src="images/sbs-plate.webp" alt="sbs plate">
+        </div>
+        <div class="project-cell area-logos" aria-label="Logos page from brand book placeholder">
+          <img src="images/sbs-logos.webp" alt="sbs logos">
+        </div>
+        <div class="project-cell area-graphics" aria-label="Elements and graphics page from brand book placeholder">
+          <img src="images/sbs-graphics.webp" alt="sbs graphics">
+        </div>
+        <a href="https://online.fliphtml5.com/tefcf/Brand_Guide_updated_Feb-10-spreads/" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Flipbook</a>
       </div>
     </div>
   </main>

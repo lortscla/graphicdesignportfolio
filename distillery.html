@@ -27,17 +27,22 @@
     .project-grid-distillery {
       display: grid;
       gap: var(--gutter);
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1.5fr ;
       grid-template-areas:
-        "label-top  bottle  brochure  brochure"
-        "label-bot  bottle  phone     logos";
+        "phone  bottle  brochure  "
+        "label-top  label-bot  logos     ";
     }
-    .project-grid-distillery .area-label-top { grid-area: label-top; aspect-ratio: 5 / 3; }
-    .project-grid-distillery .area-label-bot { grid-area: label-bot; aspect-ratio: 3 / 4; }
-    .project-grid-distillery .area-bottle { grid-area: bottle; aspect-ratio: 1 / 2; }
-    .project-grid-distillery .area-brochure { grid-area: brochure; aspect-ratio: 16 / 9; }
-    .project-grid-distillery .area-phone { grid-area: phone; aspect-ratio: 9 / 16; }
-    .project-grid-distillery .area-logos { grid-area: logos; aspect-ratio: 4 / 3; }
+    .project-grid-distillery .area-label-top { grid-area: label-top; aspect-ratio: 2 / 1.3; order:2;}
+    .project-grid-distillery .area-label-bot { grid-area: label-bot; aspect-ratio: 1 / 1; order:3;}
+    .project-grid-distillery .area-bottle { grid-area: bottle; aspect-ratio: 1 / 1.6; order:1;}
+    .project-grid-distillery .area-brochure { grid-area: brochure; aspect-ratio: 16 / 12; order:5;}
+    .project-grid-distillery .area-phone { grid-area: phone; aspect-ratio: 1 / 1.5; order:4;}
+    .project-grid-distillery .area-logos { grid-area: logos; aspect-ratio: 6 / 3; order:6;}
+
+    .project-grid-distillery .area-logos {
+      border: solid 1px black;
+    }
+    
     @media (max-width: 1000px) {
       .project-grid-distillery {
         grid-template-columns: 1fr;
@@ -84,12 +89,24 @@
       <p class="child-body">Branding identity, logo design, brand guide, whiskey label and social media ad for 248 Distilling located in the western United States, focused on inclusivity and embracing diversity.</p>
 
       <div class="project-grid project-grid-distillery">
-        <div class="project-cell area-label-top" aria-label="248 Whiskey label — logo design placeholder"></div>
-        <div class="project-cell area-bottle" aria-label="248 Whiskey bottle photograph placeholder"></div>
-        <div class="project-cell area-brochure" aria-label="Brand guide brochure mockup placeholder"></div>
-        <div class="project-cell area-label-bot" aria-label="248 Whiskey label with full text and warning placeholder"></div>
-        <div class="project-cell area-phone" aria-label="Phone showing 248 Distilling Instagram placeholder"></div>
-        <div class="project-cell area-logos" aria-label="Logo variations and primary/secondary logo grid placeholder"></div>
+        <div class="project-cell area-label-top" aria-label="248 Whiskey label — logo design placeholder">
+          <img src="images/whiskey-label-front.webp" alt="248 Whiskey label logo design placeholder">
+        </div>
+        <div class="project-cell area-bottle" aria-label="248 Whiskey bottle photograph placeholder">
+          <img src="images/whiskey-mockup.webp" alt="248 Whiskey bottle photograph placeholder">
+        </div>
+        <div class="project-cell area-brochure" aria-label="Brand guide brochure mockup placeholder">
+          <img src="images/whiskey-brandguide-mockup.webp" alt="Brand guide brochure mockup placeholder">
+        </div>
+        <div class="project-cell area-label-bot" aria-label="248 Whiskey label with full text and warning placeholder">
+          <img src="images/whiskey-label-back.webp" alt="248 Whiskey label with full text and warning placeholder">
+        </div>
+        <div class="project-cell area-phone" aria-label="Phone showing 248 Distilling Instagram placeholder">
+          <img src="images/whiskey-smad.webp" alt="Phone showing 248 Distilling Instagram placeholder">
+        </div>
+        <div class="project-cell area-logos" aria-label="Logo variations and primary/secondary logo grid placeholder">
+          <img src="images/whiskey-brand-spread.webp" alt="Logo variations and primary/secondary logo grid placeholder">
+        </div>
       </div>
     </div>
   </main>
