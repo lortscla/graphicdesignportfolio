@@ -48,12 +48,13 @@
         justify-items: center;
       }
       .project-grid-artprograms > * { width: 100%; }
-      .project-grid-artprograms .area-notebook { max-width: 440px; }
-      .project-grid-artprograms .area-phone { max-width: 440px; }
-      .project-grid-artprograms .area-poster { max-width: 440px; }
-      .project-grid-artprograms .area-folder-open { max-width: 660px; }
-      .project-grid-artprograms .area-folder-front { max-width: 440px; }
-      .project-grid-artprograms .area-folder-back { max-width: 440px; }
+      .project-grid-artprograms .area-notebook { max-width: 440px; order:2; }
+      .project-grid-artprograms .area-button { order: 3; }
+      .project-grid-artprograms .area-phone { max-width: 440px; order:7;}
+      .project-grid-artprograms .area-poster { max-width: 440px; order:1; }
+      .project-grid-artprograms .area-folder-open { max-width: 660px;order:4;}
+      .project-grid-artprograms .area-folder-front { max-width: 440px; order:5;}
+      .project-grid-artprograms .area-folder-back { max-width: 440px; order:6;}
     }
   </style>
 </head>
@@ -104,7 +105,7 @@
           <img src="images/hacc-art-folder-back.webp" alt="Folder held mockup">
         </div>
         <div class="project-cell area-folder-back" aria-label="Informational folder being held open placeholder">
-          <img src="images/hacc-art-folder-back.webp" alt="Folder held mockup">
+          <img src="images/hacc-art-folder-front.webp" alt="Folder held mockup">
         </div>
       </div>
     </div>
