@@ -565,7 +565,7 @@ img {
 
   /* Per-cell max-widths derived from each row's desktop ratio */
  .row-1 .cell:nth-child(1)       { max-width: 696px; }
-.row-1 .cell:nth-child(2)       { max-width: 350px; }
+.row-1 .cell:nth-child(2)       { max-width: 220px; }
 
   .row-2 .cell:nth-child(1)       { max-width: 464px; }
   .row-2 .cell:nth-child(2)       { max-width: 928px; }
@@ -638,15 +638,23 @@ img {
   .site-header.shrunk .logo img { height: 40px; }
 
 
-    .hamburger {
-      display: block;
+  .hamburger {
+    display: block;
     top: auto;
     bottom: 8px;
     transform: none;
     right: 20px;
+    transition: bottom 0.35s ease, width 0.35s ease, height 0.35s ease;
   }
+
   .hamburger .bar {
     background: #ffffff;
+  }
+
+  .site-header.shrunk .hamburger {
+    bottom: 8px;
+    width: 36px;
+    height: 24px;
   }
 
   /* Logo shrinks for mobile */
