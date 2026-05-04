@@ -784,4 +784,7 @@ img {
     transform: none;
     box-shadow: none;
   }
+   .cell-title {
+    display: none;
+  }
 }
