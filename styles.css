@@ -303,9 +303,10 @@ img {
 .row-2 { grid-template-columns: 1fr 2.21fr; }     /* tshirt  | bottles      */
 .row-3 { grid-template-columns: 3fr 1.51fr; }     /* cake    | collage      */
 .row-4 { grid-template-columns: 1fr 1.295fr; }     /* lifecycle | typography */
-.row-5 { grid-template-columns: 1.86fr 1fr; }     /* moldova | whiskey      */
+.row-5 { grid-template-columns: 1fr 1.55fr 1.705fr; }     /* moldova | whiskey      */
 .row-6 { grid-template-columns: 1fr 1.16fr 1.16fr; }    /* mixing  | two websites    */
 .row-7 { grid-template-columns: 1fr 1fr; }     /* aurora  | newspaper    */
+
 
 
 /* Image cell — placeholder gray box with a 1px black frame.
@@ -604,7 +605,7 @@ img {
     width: 100%;
   }
 
-  /* Per-cell max-widths derived from each row's desktop ratio */
+  /* ---- Per-cell max-widths derived from each row's desktop ratio */
  .row-1 .cell:nth-child(1)       { max-width: 696px; }
 .row-1 .cell:nth-child(2)       { max-width: 220px; }
 
@@ -619,11 +620,13 @@ img {
   .row-5 .cell:nth-child(1)       { max-width: 928px; }
   .row-5 .cell:nth-child(2)       { max-width: 464px; }
 
-  .row-7 .cell                    { max-width: 696px; }
+  
 .row-6 .cell:nth-child(1)       { max-width: 600px; }
   .row-6 .cell:nth-child(2)       { max-width: 600px; }
   .row-6 .cell:nth-child(3) { max-width: 600px; }
     
+  .row-7 .cell                    { max-width: 696px; }
+  
     .logo-name { font-size: 30px; }
   .site-header.shrunk .logo-name { font-size: 24px; }
   .logo-tag { font-size: 12px; }

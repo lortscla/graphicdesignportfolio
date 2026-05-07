@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Conceptual Interpretation of the U.S. Bill of Rights — Claire Lorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+<link rel="shortcut icon" href="favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Claire Lorts Graphic Design" />
+<link rel="manifest" href="favicon/site.webmanifest" />
+
+<!--for texting website-->
+<meta property="og:title" content="Claire Lorts | Graphic Design" />
+<meta property="og:description" content="Claire Lorts | Graphic Design" />
+<meta property="og:image" content="https://www.lortsdesign.com/images/logo-for-texting.jpg" />
+<meta property="og:url" content="https://www.lortsdesign.com" />
+<meta property="og:type" content="website" />
+
+  <style>
+
+
+    .project-grid-amendments {
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: repeat(2, 1fr);  
+  grid-template-areas:
+    "posters posters"
+    "button button"
+    "egg paper";
+}
+
+    .project-grid-amendments .area-posters { grid-area: posters; aspect-ratio: 2 / 1; }
+    .project-grid-amendments .area-button { grid-area: button; justify-self: center; align-self: center; }
+    .project-grid-amendments .area-egg { grid-area: egg; aspect-ratio: 1.4 / 1; max-width: 800px; align-self: center; }
+    .project-grid-amendments .area-paper { grid-area: paper;  aspect-ratio: 1.4 / 1; }
+    
+  
+    @media (max-width: 1000px) {
+      .project-grid-amendments {
+        grid-template-columns: 1fr 1 fr;
+        grid-template-areas: none;
+        justify-items: center;
+      }
+      .project-grid-amendments > * { width: 100%; }
+      .project-grid-amendments .area-posters { max-width: 700px; }
+      .project-grid-amendments .area-egg { max-width: 660px; }
+      .project-grid-amendments .area-paper { max-width: 440px; }
+    
+    }
+  </style>
+
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="header-cream" aria-hidden="true"></div>
+      <a href="index.html" class="logo" aria-label="Claire Lorts — Home">
+        <img src="images/logo.png" alt="Claire Lorts — Graphic Design" />
+      </a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html">Portfolio</a>
+      <a href="about.html">About</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+      <a href="index.html">Portfolio</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="page page-child">
+    <div class="child-wrapper child-wrapper-project">
+      <h1 class="child-title">A Conceptual Interpretation of the U.S. Bill of Rights</h1>
+      <p class="child-subtitle">Client: Revive.org (fictitious)</p>
+      <p class="child-body">Visual representation of the first 10 amendments of the United States Constitution
+using photographs of found objects. All photographic visuals are single shots of found
+objects. The book layout was created using Adobe InDesign.</p>
+
+      <div class="project-grid project-grid-amendments">
+
+        <div class="project-cell area-posters" aria-label="Four wine bottles with branding placeholder">
+          <img src="images/amendments-posters.webp" alt="amendment">
+        </div>
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:f6a9bb50-d1f7-473f-b0cd-210a24ac9c34" target="_blank" rel="noopener noreferrer" class="btn-red area-button">View The Book</a>
+        <div class="project-cell area-egg" aria-label="Computer and phone showing Common Ground winery website placeholder">
+          <img src="images/amendments-egg.webp" alt="amendment">
+        </div>
+        <div class="project-cell area-paper" aria-label="Wine bottle with coasters placeholder">
+          <img src="images/amendemnts-ripped-paper.webp" alt="amendment">
+        </div>
+      
+        
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Claire Lorts</p>
+    <p>Designed and Built by Claire Lorts</p>
+    <p>Contact: <a href="https://linktr.ee/clairelorts" target="_blank" rel="noopener noreferrer">My Linktree</a></p>
+    <p>Boalsburg, PA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
